@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "050ff52e-d0cb-4bf9-920f-555df8475d14",
+		"name": "CRUD USERS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Guardar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Rafael",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "correo123@prueba.co",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlAPI}}/users",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzdmODhhZDIxN2ZlMGM5NDFjMzhhMCIsImlhdCI6MTU4NDkyMDczMywiZXhwIjoxNTg0OTI0MzMzfQ.JvqhIIuOn17nKGJoh_PQHBgXlYAYb3b_F2RJnFCJdNo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Oracio",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "email@algo.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "98765",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlAPI}}/users/5e77f88ad217fe0c941c38a0",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"users",
+						"5e77f88ad217fe0c941c38a0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzdmODhhZDIxN2ZlMGM5NDFjMzhhMCIsImlhdCI6MTU4NDkyMDczMywiZXhwIjoxNTg0OTI0MzMzfQ.JvqhIIuOn17nKGJoh_PQHBgXlYAYb3b_F2RJnFCJdNo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{urlAPI}}/users/5e77f88ad217fe0c941c38a0",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"users",
+						"5e77f88ad217fe0c941c38a0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar foto",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/PC/Downloads/descarga.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlAPI}}/users/5e7691bf091b79162cd2790f/set/image",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"users",
+						"5e7691bf091b79162cd2790f",
+						"set",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activar usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzdmODhhZDIxN2ZlMGM5NDFjMzhhMCIsImlhdCI6MTU4NDkyMDczMywiZXhwIjoxNTg0OTI0MzMzfQ.JvqhIIuOn17nKGJoh_PQHBgXlYAYb3b_F2RJnFCJdNo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{urlAPI}}/users/5e77f88ad217fe0c941c38a0/set/status/active/true",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"users",
+						"5e77f88ad217fe0c941c38a0",
+						"set",
+						"status",
+						"active",
+						"true"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visualizacion usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzdmODhhZDIxN2ZlMGM5NDFjMzhhMCIsImlhdCI6MTU4NDkyMDczMywiZXhwIjoxNTg0OTI0MzMzfQ.JvqhIIuOn17nKGJoh_PQHBgXlYAYb3b_F2RJnFCJdNo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{urlAPI}}/users/5e77f88ad217fe0c941c38a0/set/status/visible/false",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"users",
+						"5e77f88ad217fe0c941c38a0",
+						"set",
+						"status",
+						"visible",
+						"false"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzdmODhhZDIxN2ZlMGM5NDFjMzhhMCIsImlhdCI6MTU4NDkyMDczMywiZXhwIjoxNTg0OTI0MzMzfQ.JvqhIIuOn17nKGJoh_PQHBgXlYAYb3b_F2RJnFCJdNo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{urlAPI}}/users/5e77f88ad217fe0c941c38a0",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"users",
+						"5e77f88ad217fe0c941c38a0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autorizacion de usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzdmODhhZDIxN2ZlMGM5NDFjMzhhMCIsImlhdCI6MTU4NDkyMDczMywiZXhwIjoxNTg0OTI0MzMzfQ.JvqhIIuOn17nKGJoh_PQHBgXlYAYb3b_F2RJnFCJdNo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "correo123@prueba.co",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlAPI}}/authorization",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"authorization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Quitar autorizacion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "5e77d1c458e38007e4212aee",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlAPI}}/authorization",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"authorization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar mensaje",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzdmODhhZDIxN2ZlMGM5NDFjMzhhMCIsImlhdCI6MTU4NDkyMDczMywiZXhwIjoxNTg0OTI0MzMzfQ.JvqhIIuOn17nKGJoh_PQHBgXlYAYb3b_F2RJnFCJdNo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "Esta es una prueba de mensajes por mqtt",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlAPI}}/messages/send",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"messages",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar mensajes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzZhZmRlMjA4ZjA5MmRkNGUyMzYxYyIsImlhdCI6MTU4NDkxNjUyMywiZXhwIjoxNTg0OTIwMTIzfQ.f8Cl1nodoOhIUzLGUb06_0BuP52hwiG8g8rxMCVMHZ8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{urlAPI}}/messages",
+					"host": [
+						"{{urlAPI}}"
+					],
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
